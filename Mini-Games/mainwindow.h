@@ -56,3 +56,28 @@ private:
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
+
+
+/*
+    UML_Ãþ¹Ï_MainWindow
+--------------------------------------------------------------------------------------------------------------------
+-    pageNo: static int;
+-    pageMAX: static int;
+-    pokerThanSize: class pokerThanSize;
+
++    *ui: Ui::MainWindow;
+--------------------------------------------------------------------------------------------------------------------
+-    MainWindow(QWidget *parent = nullptr);
+-    ~MainWindow();
+-    setPage(int): void;
+
++    on_stop_clicked(): void;
++    on_DOWN_clicked(): void;
++    on_UP_clicked(): void;
++    on_play_clicked(): void;
++    on_back_clicked(): void;
++    on_pageComboBox_currentIndexChanged(int index): void;
++    on_pokerThanSize_clicked(): void;
+
+*/
+
