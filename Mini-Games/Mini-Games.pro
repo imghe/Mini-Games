@@ -11,10 +11,12 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    poker.cpp \
     pokerthansize.cpp
 
 HEADERS += \
     mainwindow.h \
+    poker.h \
     pokerthansize.h
 
 FORMS += \
@@ -25,3 +27,5 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
