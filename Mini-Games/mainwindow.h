@@ -8,7 +8,7 @@
 //放置讀取視窗標頭
 
 #include "pokerthansize.h"//撲克牌( 比大小 )
-
+#include "booom.h"
 
 
 //--------------------------------------------//
@@ -32,6 +32,7 @@ public:
 //放置初始視窗宣告
 
     pokerThanSize pokerThanSize;
+    Booom Booom;
 
 //--------------------------------------------//
 private slots:
@@ -51,7 +52,11 @@ private slots:
 
     void on_pokerThanSize_clicked();
 
+    void on_Booom_clicked();
+
 //--------------------------------------------//
+
+
 private:
     Ui::MainWindow *ui;
 };
@@ -59,25 +64,27 @@ private:
 
 
 /*
+
     UML_類圖_MainWindow
 --------------------------------------------------------------------------------------------------------------------
--    pageNo: static int;
--    pageMAX: static int;
--    pokerThanSize: class pokerThanSize;
+-    pageNo     : static int;
+-    pageMAX    : static int;
+-    pokerThanSize  : class pokerThanSize;
 
-+    *ui: Ui::MainWindow;
++    *ui    : class MainWindow;
 --------------------------------------------------------------------------------------------------------------------
 -    MainWindow(QWidget *parent = nullptr);
 -    ~MainWindow();
 -    setPage(int): void;
 
-+    on_stop_clicked(): void;
-+    on_DOWN_clicked(): void;
-+    on_UP_clicked(): void;
-+    on_play_clicked(): void;
-+    on_back_clicked(): void;
-+    on_pageComboBox_currentIndexChanged(int index): void;
-+    on_pokerThanSize_clicked(): void;
++    on_stop_clicked()  : void;
++    on_DOWN_clicked()  : void;
++    on_UP_clicked()    : void;
++    on_play_clicked()  : void;
++    on_back_clicked()  : void;
++    on_pageComboBox_currentIndexChanged(int index) : void;
++    on_pokerThanSize_clicked() : void;
++    on_Booom_clicked() : void;
 
 */
 

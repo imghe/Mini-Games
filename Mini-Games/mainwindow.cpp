@@ -9,6 +9,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->main->setCurrentIndex(0);
+    ui->menus->setCurrentIndex(0);
+    ui->pageComboBox->setEditable(true);
+    ui->pageComboBox->setCurrentIndex(0);
+    for (int i=1;i<pageMAX+2;i++)
+        {
+            ui->pageComboBox->addItem(QString::number(i));
+        }
 }
 
 MainWindow::~MainWindow()
@@ -44,13 +52,6 @@ void MainWindow::on_UP_clicked()
 void MainWindow::on_play_clicked()
 {
     ui->main->setCurrentIndex(1);
-    ui->menus->setCurrentIndex(0);
-    ui->pageComboBox->setEditable(true);
-    ui->pageComboBox->setCurrentIndex(0);
-    for (int i=1;i<pageMAX+2;i++)
-        {
-            ui->pageComboBox->addItem(QString::number(i));
-        }
 }
 
 
@@ -68,5 +69,11 @@ void MainWindow::on_pageComboBox_currentIndexChanged(int index)
 void MainWindow::on_pokerThanSize_clicked()
 {
     pokerThanSize.show();
+}
+
+
+void MainWindow::on_Booom_clicked()
+{
+    Booom.show();
 }
 

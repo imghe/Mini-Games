@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Booom">
+        <file>image/Booom/Boom.png</file>
+    </qresource>
+    <qresource prefix="/pokerthansize"/>
+    <qresource prefix="/poker"/>
+</RCC>

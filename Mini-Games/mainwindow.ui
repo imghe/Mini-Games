@@ -84,6 +84,19 @@
          <string>撲克牌( 比大小 )</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="Booom">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>拆解炸彈</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_1"/>
      </widget>
