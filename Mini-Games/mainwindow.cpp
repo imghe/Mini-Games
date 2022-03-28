@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    ui->main->setCurrentIndex(0);
     delete ui;
 }
 

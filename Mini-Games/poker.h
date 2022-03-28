@@ -7,30 +7,13 @@ class poker
 {
 
 public:
-
-    static std::string allPoker[52];
-    static bool hasPoker[52];
-    poker();
-private:
     int givePoker();
     void resetPoker();
+private:
+    poker();
+    static std::string allPoker[52];
+    static bool hasPoker[52];
+
 };
 
 #endif // POKER_H
-
-
-/*
-
-    UML_Ãþ¹Ï_poker
---------------------------------------------------------------------------------------------------------------------
--    allPoker   : static string[52];
--    hasPoker   : static bool[52];
--    pokerThanSize  : class pokerThanSize;
-
---------------------------------------------------------------------------------------------------------------------
--    poker();
-
-+    givePoker()    : int;
-+    resetPoker()   : void;
-
-*/

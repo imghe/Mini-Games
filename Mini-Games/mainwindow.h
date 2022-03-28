@@ -21,21 +21,23 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    static int pageNo;
-    static int pageMAX;
 
-    void setPage(int);
-//--------------------------------------------//
-//放置初始視窗宣告
 
-    pokerThanSize pokerThanSize;
-    Booom Booom;
-
-//--------------------------------------------//
 private slots:
+    //--------------------------------------------//
+    //放置開啟視窗指令
+
+    void on_pokerThanSize_clicked();
+
+    void on_Booom_clicked();
+
+    //--------------------------------------------//
+    void setPage(int);
+
     void on_stop_clicked();
 
     void on_DOWN_clicked();
@@ -47,18 +49,21 @@ private slots:
     void on_back_clicked();
 
     void on_pageComboBox_currentIndexChanged(int index);
-//--------------------------------------------//
-//放置開啟視窗指令
-
-    void on_pokerThanSize_clicked();
-
-    void on_Booom_clicked();
-
-//--------------------------------------------//
 
 
 private:
     Ui::MainWindow *ui;
+
+    static int pageNo;
+    static int pageMAX;
+
+    //--------------------------------------------//
+    //放置初始視窗宣告
+
+    pokerThanSize pokerThanSize;
+    Booom Booom;
+
+    //--------------------------------------------//
 };
 #endif // MAINWINDOW_H
 
@@ -70,21 +75,22 @@ private:
 -    pageNo     : static int;
 -    pageMAX    : static int;
 -    pokerThanSize  : class pokerThanSize;
-
-+    *ui    : class MainWindow;
+-    *ui    : class MainWindow;
 --------------------------------------------------------------------------------------------------------------------
--    MainWindow(QWidget *parent = nullptr);
--    ~MainWindow();
--    setPage(int): void;
++    MainWindow(QWidget *parent = nullptr);
++    ~MainWindow();
 
-+    on_stop_clicked()  : void;
-+    on_DOWN_clicked()  : void;
-+    on_UP_clicked()    : void;
-+    on_play_clicked()  : void;
-+    on_back_clicked()  : void;
-+    on_pageComboBox_currentIndexChanged(int index) : void;
-+    on_pokerThanSize_clicked() : void;
-+    on_Booom_clicked() : void;
+-    setPage(int): void;
+-    on_stop_clicked()  : void;
+-    on_DOWN_clicked()  : void;
+-    on_UP_clicked()    : void;
+-    on_play_clicked()  : void;
+-    on_back_clicked()  : void;
+-    on_pageComboBox_currentIndexChanged(int index) : void;
+-    on_pokerThanSize_clicked() : void;
+-    on_Booom_clicked() : void;
+--------------------------------------------------------------------------------------------------------------------
+
 
 */
 
