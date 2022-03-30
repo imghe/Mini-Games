@@ -14,6 +14,7 @@ class Booom : public QWidget
 public:
     explicit Booom(QWidget *parent = nullptr);
     ~Booom();
+    void BoomReset();
 
 private slots:
 
@@ -24,10 +25,13 @@ private slots:
 
 private:
     void setBoomKeySize();
+
     void Boooom();
+    void KeyIn(int);
 
     Ui::Booom *ui;
 
+    static int BoomSize;
     static int BoomMax;
     static int BoomMin;
     static int BoomSec;

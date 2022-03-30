@@ -4,6 +4,7 @@
 #include <QString>
 #include <QTime>
 
+int Booom::BoomSize=0;
 int Booom::BoomMax=0;
 int Booom::BoomMin=0;
 int Booom::BoomSec=0;
@@ -14,10 +15,7 @@ Booom::Booom(QWidget *parent) :
     ui(new Ui::Booom)
 {
     ui->setupUi(this);
-    ui->BooomPage->setCurrentIndex(0);
-    ui->BoomKeySize->setFocusPolicy(Qt::NoFocus);
-    ui->BoomKey->setText("");
-    setBoomKeySize();
+    BoomReset();
 }
 
 Booom::~Booom()
@@ -30,10 +28,35 @@ void Booom::setBoomKeySize(){
                 QString::number(BoomMin)+
                 tr("~")+
                 QString::number(BoomMax));
+    int Value=100-((BoomMax-BoomMin)*100+0.1)/BoomSize;
+    ui->BoomBar->setValue(Value);
+}
+
+void Booom::BoomReset(){
+    ui->BooomPage->setCurrentIndex(0);
+    ui->BoomKeySize->setFocusPolicy(Qt::NoFocus);
+    ui->BoomKey->setText("");
+    ui->BoomSizeKey->setText("");
+    ui->BoomSecKey->setText("");
+    BoomMin=0;
+    setBoomKeySize();
 }
 
 void Booom::Boooom(){
-    ui->BooomPage->setCurrentIndex(0);
+    BoomReset();
+}
+
+void Booom::KeyIn(int NewKey)
+{
+    if(BoomMin<NewKey&&NewKey<BoomMax){
+
+       if(BoomEnd==NewKey)Boooom();
+       else {
+           if(NewKey>BoomEnd)BoomMax=NewKey;
+           else BoomMin=NewKey;
+           setBoomKeySize();
+       }
+    }
 }
 
 void Booom::on_BoomGOGO_clicked()
@@ -46,11 +69,13 @@ void Booom::on_BoomGOGO_clicked()
            SecKey = BoomSecKey.toFloat();
 
    if(SizeKey>0&&SecKey>0){
-       BoomMax=SizeKey;
+       BoomMax = SizeKey;
+       BoomSize= SizeKey;
        BoomSec = SecKey;
        setBoomKeySize();
 
        srand(time(NULL));
+
        BoomEnd=(rand()+BoomMax)%BoomMax;
        if(BoomEnd==0)BoomEnd+=1;
 
@@ -66,16 +91,7 @@ void Booom::on_KeySet_clicked()
     int
             NewKey = Key.toFloat();
 
-    if(BoomMin<NewKey&&NewKey<BoomMax){
-
-       if(BoomEnd==NewKey)Boooom();
-       else {
-           if(NewKey>BoomEnd)BoomMax=NewKey;
-           else BoomMin=NewKey;
-           setBoomKeySize();
-       }
-       ui->BooomPage->setCurrentIndex(1);
-
-    }
+    KeyIn(NewKey);
 }
+
 

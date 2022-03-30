@@ -73,6 +73,7 @@ void MainWindow::on_pokerThanSize_clicked()
 
 void MainWindow::on_Booom_clicked()
 {
+    Booom.BoomReset();
     Booom.show();
 }
 
