@@ -8,11 +8,16 @@ class poker
 
 public:
     int givePoker();
-    void resetPoker();
-private:
+    int getpoker();
+    void setpoker(int);
+    int getOppOpoker();
+    void setOppOpoker(int);
     poker();
-    static std::string allPoker[52];
-    static bool hasPoker[52];
+private:
+
+    static int myPoker;
+    static int oppoPoker;
+
 
 };
 

@@ -67,6 +67,7 @@ void MainWindow::on_pageComboBox_currentIndexChanged(int index)
 
 void MainWindow::on_pokerThanSize_clicked()
 {
+    pokerThanSize.reset();
     pokerThanSize.show();
 }
 
@@ -76,4 +77,5 @@ void MainWindow::on_Booom_clicked()
     Booom.BoomReset();
     Booom.show();
 }
+
 

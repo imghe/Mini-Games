@@ -1,45 +1,39 @@
+
 #include "poker.h"
 
 #include <QString>
 #include <QTime>
 
-std::string poker::allPoker[52]={};
-bool poker::hasPoker[52]={};
-
+ int poker::myPoker=0;
+ int poker::oppoPoker=0;
 poker::poker()
 {
-    for(int i=0;i<52;i++){
-        switch (i% 4){
-            case  1: allPoker[i]+="?";break;
-            case  2: allPoker[i]+="?";break;
-            case  3: allPoker[i]+="?";break;
-            case  4: allPoker[i]+="?";break;
-        }
-        switch (i%13){
-            case  0: allPoker[i]+="A";  break;
-            case 10: allPoker[i]+="J";  break;
-            case 11: allPoker[i]+="Q";  break;
-            case 12: allPoker[i]+="K";  break;
-            default: allPoker[i]+= i ;  break;
-        }
-    }
+
 }
 
 int poker::givePoker(){
 
-    srand(time(NULL));
+    srand(time(0));
     int t=0;
 
-    while (1) {
+
         t=rand()%52;
-        if(hasPoker[t]==0){
-            hasPoker[t]=1;
+
             return t;
-        }
-    }
+
+
+}
+int poker::getpoker(){
+    return myPoker;
+}
+void poker::setpoker(int newPoker ){
+    myPoker=newPoker;
+}
+int poker::getOppOpoker(){
+    return oppoPoker;
+}
+void poker::setOppOpoker(int newPoker){
+    oppoPoker=newPoker;
 }
 
-void poker::resetPoker(){
-    for(int i=0;i<52;i++)
-        hasPoker[i]=0;
-}
+

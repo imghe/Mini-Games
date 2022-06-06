@@ -14,6 +14,28 @@ class pokerThanSize : public QWidget
 public:
     explicit pokerThanSize(QWidget *parent = nullptr);
     ~pokerThanSize();
+    void reset();
+
+private slots:
+
+
+
+
+
+
+
+
+    void on_higer_clicked();
+
+    void on_lower_clicked();
+
+    void on_start_clicked();
+
+
+
+
+
+    void on_pushButton_clicked();
 
 private:
     Ui::pokerThanSize *ui;
