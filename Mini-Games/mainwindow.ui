@@ -97,6 +97,19 @@
          <string>拆解炸彈</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="mineSweeper">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>220</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>踩地雷</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_1"/>
      </widget>

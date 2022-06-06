@@ -1,5 +1,5 @@
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mainwindow.h"
 
 int MainWindow::pageNo = 0 ;
 int MainWindow::pageMAX = 1 ;
@@ -78,4 +78,10 @@ void MainWindow::on_Booom_clicked()
     Booom.show();
 }
 
+
+void MainWindow::on_mineSweeper_clicked()
+{
+    Minesweeper.setMines();
+    Minesweeper.show();
+}
 

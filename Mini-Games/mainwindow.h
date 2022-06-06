@@ -5,11 +5,11 @@
 
 //--------------------------------------------//
 #include <QApplication>
-//©ñ¸mÅª¨úµøµ¡¼ÐÀY
+//ï¿½ï¿½ï¿½mÅªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y
 
-#include "pokerthansize.h"//¼³§JµP( ¤ñ¤j¤p )
+#include "pokerthansize.h"//ï¿½ï¿½ï¿½Jï¿½P( ï¿½ï¿½ï¿½jï¿½p )
 #include "booom.h"
-
+#include "minesweeper.h"
 
 //--------------------------------------------//
 
@@ -29,11 +29,13 @@ public:
 
 private slots:
     //--------------------------------------------//
-    //©ñ¸m¶}±Òµøµ¡«ü¥O
+    //ï¿½ï¿½ï¿½mï¿½}ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½O
 
     void on_pokerThanSize_clicked();
 
     void on_Booom_clicked();
+
+    void on_mineSweeper_clicked();
 
     //--------------------------------------------//
     void setPage(int);
@@ -50,7 +52,6 @@ private slots:
 
     void on_pageComboBox_currentIndexChanged(int index);
 
-
 private:
     Ui::MainWindow *ui;
 
@@ -58,10 +59,11 @@ private:
     static int pageMAX;
 
     //--------------------------------------------//
-    //©ñ¸mªì©lµøµ¡«Å§i
+    //ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½Å§i
 
     pokerThanSize pokerThanSize;
     Booom Booom;
+    Minesweeper Minesweeper;
 
     //--------------------------------------------//
 };
@@ -70,7 +72,7 @@ private:
 
 /*
 
-    UML_Ãþ¹Ï_MainWindow
+    UML_ï¿½ï¿½ï¿½ï¿½_MainWindow
 --------------------------------------------------------------------------------------------------------------------
 -    pageNo     : static int;
 -    pageMAX    : static int;
@@ -89,6 +91,7 @@ private:
 -    on_pageComboBox_currentIndexChanged(int index) : void;
 -    on_pokerThanSize_clicked() : void;
 -    on_Booom_clicked() : void;
+-    on_mineSweeper_clicked() : void;
 --------------------------------------------------------------------------------------------------------------------
 
 
