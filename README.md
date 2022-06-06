@@ -1,5 +1,11 @@
+#項目名稱：BigOldTwo-BOT-
+###成員 ：
+#####B0247851 陳柏翔 (Leader)
+#####
+#####B0222891 余俊昌
+
 使用遊戲合集的形式
-目前主要使用工具 : QT & VisualStudio
+目前主要使用工具 : QT & Visual Studio
 
 UML類圖
 
