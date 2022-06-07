@@ -23,13 +23,6 @@ void Minesweeper::resetGame()
 {
     firstStep = 0;
     successCounter = 0;
-    for(int i = 0; i < 5; i++)
-    {
-        for(int j = 0; j < 10; j++)
-        {
-            mines[i][j] = 0;
-        }
-    }
     setMines();
     ui->p1_1->setText("=");
     ui->p1_2->setText("=");
@@ -81,10 +74,126 @@ void Minesweeper::resetGame()
     ui->p5_8->setText("=");
     ui->p5_9->setText("=");
     ui->p5_10->setText("=");
+    buttonsEnable();
+}
+
+void Minesweeper::buttonsEnable()
+{
+    ui->p1_1->setEnabled(true);
+    ui->p1_2->setEnabled(true);
+    ui->p1_3->setEnabled(true);
+    ui->p1_4->setEnabled(true);
+    ui->p1_5->setEnabled(true);
+    ui->p1_6->setEnabled(true);
+    ui->p1_7->setEnabled(true);
+    ui->p1_8->setEnabled(true);
+    ui->p1_9->setEnabled(true);
+    ui->p1_10->setEnabled(true);
+    ui->p2_1->setEnabled(true);
+    ui->p2_2->setEnabled(true);
+    ui->p2_3->setEnabled(true);
+    ui->p2_4->setEnabled(true);
+    ui->p2_5->setEnabled(true);
+    ui->p2_6->setEnabled(true);
+    ui->p2_7->setEnabled(true);
+    ui->p2_8->setEnabled(true);
+    ui->p2_9->setEnabled(true);
+    ui->p2_10->setEnabled(true);
+    ui->p3_1->setEnabled(true);
+    ui->p3_2->setEnabled(true);
+    ui->p3_3->setEnabled(true);
+    ui->p3_4->setEnabled(true);
+    ui->p3_5->setEnabled(true);
+    ui->p3_6->setEnabled(true);
+    ui->p3_7->setEnabled(true);
+    ui->p3_8->setEnabled(true);
+    ui->p3_9->setEnabled(true);
+    ui->p3_10->setEnabled(true);
+    ui->p4_1->setEnabled(true);
+    ui->p4_2->setEnabled(true);
+    ui->p4_3->setEnabled(true);
+    ui->p4_4->setEnabled(true);
+    ui->p4_5->setEnabled(true);
+    ui->p4_6->setEnabled(true);
+    ui->p4_7->setEnabled(true);
+    ui->p4_8->setEnabled(true);
+    ui->p4_9->setEnabled(true);
+    ui->p4_10->setEnabled(true);
+    ui->p5_1->setEnabled(true);
+    ui->p5_2->setEnabled(true);
+    ui->p5_3->setEnabled(true);
+    ui->p5_4->setEnabled(true);
+    ui->p5_5->setEnabled(true);
+    ui->p5_6->setEnabled(true);
+    ui->p5_7->setEnabled(true);
+    ui->p5_8->setEnabled(true);
+    ui->p5_9->setEnabled(true);
+    ui->p5_10->setEnabled(true);
+}
+
+void Minesweeper::buttonsDisable()
+{
+    ui->p1_1->setEnabled(false);
+    ui->p1_2->setEnabled(false);
+    ui->p1_3->setEnabled(false);
+    ui->p1_4->setEnabled(false);
+    ui->p1_5->setEnabled(false);
+    ui->p1_6->setEnabled(false);
+    ui->p1_7->setEnabled(false);
+    ui->p1_8->setEnabled(false);
+    ui->p1_9->setEnabled(false);
+    ui->p1_10->setEnabled(false);
+    ui->p2_1->setEnabled(false);
+    ui->p2_2->setEnabled(false);
+    ui->p2_3->setEnabled(false);
+    ui->p2_4->setEnabled(false);
+    ui->p2_5->setEnabled(false);
+    ui->p2_6->setEnabled(false);
+    ui->p2_7->setEnabled(false);
+    ui->p2_8->setEnabled(false);
+    ui->p2_9->setEnabled(false);
+    ui->p2_10->setEnabled(false);
+    ui->p3_1->setEnabled(false);
+    ui->p3_2->setEnabled(false);
+    ui->p3_3->setEnabled(false);
+    ui->p3_4->setEnabled(false);
+    ui->p3_5->setEnabled(false);
+    ui->p3_6->setEnabled(false);
+    ui->p3_7->setEnabled(false);
+    ui->p3_8->setEnabled(false);
+    ui->p3_9->setEnabled(false);
+    ui->p3_10->setEnabled(false);
+    ui->p4_1->setEnabled(false);
+    ui->p4_2->setEnabled(false);
+    ui->p4_3->setEnabled(false);
+    ui->p4_4->setEnabled(false);
+    ui->p4_5->setEnabled(false);
+    ui->p4_6->setEnabled(false);
+    ui->p4_7->setEnabled(false);
+    ui->p4_8->setEnabled(false);
+    ui->p4_9->setEnabled(false);
+    ui->p4_10->setEnabled(false);
+    ui->p5_1->setEnabled(false);
+    ui->p5_2->setEnabled(false);
+    ui->p5_3->setEnabled(false);
+    ui->p5_4->setEnabled(false);
+    ui->p5_5->setEnabled(false);
+    ui->p5_6->setEnabled(false);
+    ui->p5_7->setEnabled(false);
+    ui->p5_8->setEnabled(false);
+    ui->p5_9->setEnabled(false);
+    ui->p5_10->setEnabled(false);
 }
 
 void Minesweeper::setMines()
 {
+    for(int i = 0; i < 5; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            mines[i][j] = 0;
+        }
+    }
     int counter = 0, temp_number, temp_number_x, temp_number_y;
     srand(time(NULL));
     while(counter < 10)
@@ -102,6 +211,13 @@ void Minesweeper::setMines()
 
 void Minesweeper::firstStepSetMines(int first_y, int first_x)
 {
+    for(int i = 0; i < 5; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            mines[i][j] = 0;
+        }
+    }
     int counter = 0, temp_number, temp_number_x, temp_number_y;
     srand(time(NULL));
     while(counter < 10)
@@ -274,14 +390,14 @@ void Minesweeper::win()
 {
     QString out="You Win";
     QMessageBox:: about ( this , tr ( "Minesweeper" ), out);
-    setMines();
+    buttonsDisable();
 }
 
 void Minesweeper::gameOver()
 {
     QString out="You Lose";
     QMessageBox:: about ( this , tr ( "Minesweeper" ), out);
-    setMines();
+    buttonsDisable();
 }
 
 void Minesweeper::showMines()
@@ -486,11 +602,12 @@ void Minesweeper::showMines()
     {
         ui->p5_10->setText("Bomb");
     }
+    buttonsDisable();
 }
 
 void Minesweeper::on_pushButton_clicked()
 {
-    setMines();
+    resetGame();
 }
 
 void Minesweeper::on_p1_1_clicked()
@@ -512,6 +629,7 @@ void Minesweeper::on_p1_1_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_1->setEnabled(false);
 }
 
 
@@ -534,6 +652,7 @@ void Minesweeper::on_p1_2_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_2->setEnabled(false);
 }
 
 
@@ -556,6 +675,7 @@ void Minesweeper::on_p1_3_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_3->setEnabled(false);
 }
 
 
@@ -578,6 +698,7 @@ void Minesweeper::on_p1_4_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_4->setEnabled(false);
 }
 
 
@@ -600,6 +721,7 @@ void Minesweeper::on_p1_5_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_5->setEnabled(false);
 }
 
 
@@ -622,6 +744,7 @@ void Minesweeper::on_p1_6_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_6->setEnabled(false);
 }
 
 
@@ -644,6 +767,7 @@ void Minesweeper::on_p1_7_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_7->setEnabled(false);
 }
 
 
@@ -666,6 +790,7 @@ void Minesweeper::on_p1_8_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_8->setEnabled(false);
 }
 
 
@@ -688,6 +813,7 @@ void Minesweeper::on_p1_9_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_9->setEnabled(false);
 }
 
 
@@ -710,6 +836,7 @@ void Minesweeper::on_p1_10_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p1_10->setEnabled(false);
 }
 
 
@@ -732,6 +859,7 @@ void Minesweeper::on_p2_1_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_1->setEnabled(false);
 }
 
 
@@ -754,6 +882,7 @@ void Minesweeper::on_p2_2_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_2->setEnabled(false);
 }
 
 
@@ -776,6 +905,7 @@ void Minesweeper::on_p2_3_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_3->setEnabled(false);
 }
 
 
@@ -798,6 +928,7 @@ void Minesweeper::on_p2_4_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_4->setEnabled(false);
 }
 
 
@@ -820,6 +951,7 @@ void Minesweeper::on_p2_5_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_5->setEnabled(false);
 }
 
 
@@ -842,6 +974,7 @@ void Minesweeper::on_p2_6_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_6->setEnabled(false);
 }
 
 
@@ -864,6 +997,7 @@ void Minesweeper::on_p2_7_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_7->setEnabled(false);
 }
 
 
@@ -886,6 +1020,7 @@ void Minesweeper::on_p2_8_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_8->setEnabled(false);
 }
 
 
@@ -908,6 +1043,7 @@ void Minesweeper::on_p2_9_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_9->setEnabled(false);
 }
 
 
@@ -930,6 +1066,7 @@ void Minesweeper::on_p2_10_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p2_10->setEnabled(false);
 }
 
 
@@ -952,6 +1089,7 @@ void Minesweeper::on_p3_1_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_1->setEnabled(false);
 }
 
 
@@ -974,6 +1112,7 @@ void Minesweeper::on_p3_2_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_2->setEnabled(false);
 }
 
 
@@ -996,6 +1135,7 @@ void Minesweeper::on_p3_3_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_3->setEnabled(false);
 }
 
 
@@ -1018,6 +1158,7 @@ void Minesweeper::on_p3_4_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_4->setEnabled(false);
 }
 
 
@@ -1040,6 +1181,7 @@ void Minesweeper::on_p3_5_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_5->setEnabled(false);
 }
 
 
@@ -1062,6 +1204,7 @@ void Minesweeper::on_p3_6_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_6->setEnabled(false);
 }
 
 
@@ -1084,6 +1227,7 @@ void Minesweeper::on_p3_7_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_7->setEnabled(false);
 }
 
 
@@ -1106,6 +1250,7 @@ void Minesweeper::on_p3_8_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_8->setEnabled(false);
 }
 
 
@@ -1128,6 +1273,7 @@ void Minesweeper::on_p3_9_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_9->setEnabled(false);
 }
 
 
@@ -1150,6 +1296,7 @@ void Minesweeper::on_p3_10_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p3_10->setEnabled(false);
 }
 
 
@@ -1172,6 +1319,7 @@ void Minesweeper::on_p4_1_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_1->setEnabled(false);
 }
 
 
@@ -1194,6 +1342,7 @@ void Minesweeper::on_p4_2_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_2->setEnabled(false);
 }
 
 
@@ -1216,6 +1365,7 @@ void Minesweeper::on_p4_3_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_3->setEnabled(false);
 }
 
 
@@ -1238,6 +1388,7 @@ void Minesweeper::on_p4_4_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_4->setEnabled(false);
 }
 
 
@@ -1260,6 +1411,7 @@ void Minesweeper::on_p4_5_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_5->setEnabled(false);
 }
 
 
@@ -1282,6 +1434,7 @@ void Minesweeper::on_p4_6_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_6->setEnabled(false);
 }
 
 
@@ -1304,6 +1457,7 @@ void Minesweeper::on_p4_7_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_7->setEnabled(false);
 }
 
 
@@ -1326,6 +1480,7 @@ void Minesweeper::on_p4_8_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_8->setEnabled(false);
 }
 
 
@@ -1348,6 +1503,7 @@ void Minesweeper::on_p4_9_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_9->setEnabled(false);
 }
 
 
@@ -1370,6 +1526,7 @@ void Minesweeper::on_p4_10_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p4_10->setEnabled(false);
 }
 
 
@@ -1392,6 +1549,7 @@ void Minesweeper::on_p5_1_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_1->setEnabled(false);
 }
 
 
@@ -1414,6 +1572,7 @@ void Minesweeper::on_p5_2_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_2->setEnabled(false);
 }
 
 
@@ -1436,6 +1595,7 @@ void Minesweeper::on_p5_3_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_3->setEnabled(false);
 }
 
 
@@ -1458,6 +1618,7 @@ void Minesweeper::on_p5_4_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_4->setEnabled(false);
 }
 
 
@@ -1480,6 +1641,7 @@ void Minesweeper::on_p5_5_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_5->setEnabled(false);
 }
 
 
@@ -1502,6 +1664,7 @@ void Minesweeper::on_p5_6_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_6->setEnabled(false);
 }
 
 
@@ -1524,6 +1687,7 @@ void Minesweeper::on_p5_7_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_7->setEnabled(false);
 }
 
 
@@ -1546,6 +1710,7 @@ void Minesweeper::on_p5_8_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_8->setEnabled(false);
 }
 
 
@@ -1568,6 +1733,7 @@ void Minesweeper::on_p5_9_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_9->setEnabled(false);
 }
 
 
@@ -1590,6 +1756,7 @@ void Minesweeper::on_p5_10_clicked()
         successCounter++;
         checkWinning();
     }
+    ui->p5_10->setEnabled(false);
 }
 
 

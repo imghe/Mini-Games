@@ -14,9 +14,9 @@ class Minesweeper : public QWidget
 public:
     explicit Minesweeper(QWidget *parent = nullptr);
     ~Minesweeper();
-    bool firstStep;
-    int successCounter;
     void resetGame();
+    void buttonsEnable();
+    void buttonsDisable();
     void setMines();
     void firstStepSetMines(int, int);
     void minesReset();
@@ -133,6 +133,8 @@ private slots:
     void on_showMinesButton_clicked();
 
 private:
+    bool firstStep;
+    int successCounter;
     bool mines[5][10];
 
     Ui::Minesweeper *ui;
