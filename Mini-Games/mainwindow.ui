@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowFilePath">
+   <string extracomment="棋牌廳"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="main">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1281</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="open">
+     <widget class="QPushButton" name="stop">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>620</y>
+        <width>131</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>結束遊戲</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="play">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>620</y>
+        <width>131</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>開始遊戲</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="menu">
+     <widget class="QStackedWidget" name="menus">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1261</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_0">
+       <widget class="QPushButton" name="pokerThanSize">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>撲克牌( 比大小 )</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Booom">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>拆解炸彈</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="mineSweeper">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>220</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>踩地雷</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_1"/>
+     </widget>
+     <widget class="QPushButton" name="DOWN">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>620</y>
+        <width>131</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>上一頁</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="UP">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>620</y>
+        <width>131</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>下一頁</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>620</y>
+        <width>131</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>返回標題畫面</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="pageComboBox">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>630</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
