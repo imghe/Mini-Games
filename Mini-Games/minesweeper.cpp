@@ -11,7 +11,7 @@ Minesweeper::Minesweeper(QWidget *parent) :
     ui(new Ui::Minesweeper)
 {
     ui->setupUi(this);
-    clearMines();
+    resetGame();
 }
 
 Minesweeper::~Minesweeper()
@@ -19,8 +19,10 @@ Minesweeper::~Minesweeper()
     delete ui;
 }
 
-void Minesweeper::clearMines()
+void Minesweeper::resetGame()
 {
+    firstStep = 0;
+    successCounter = 0;
     for(int i = 0; i < 5; i++)
     {
         for(int j = 0; j < 10; j++)
@@ -28,30 +30,7 @@ void Minesweeper::clearMines()
             mines[i][j] = 0;
         }
     }
-}
-
-void Minesweeper::setMines()
-{
-    successCounter = 0;
-    clearMines();
-    ResetText();
-    int counter = 0, temp_number, temp_number_x, temp_number_y;
-    srand(time(NULL));
-    while(counter < 10)
-    {
-        temp_number = rand() % 50;
-        temp_number_x = temp_number % 10;
-        temp_number_y = temp_number / 10;
-        if(mines[temp_number_x][temp_number_y] == 0)
-        {
-            mines[temp_number_x][temp_number_y] = 1;
-            counter++;
-        }
-    }
-}
-
-void Minesweeper::ResetText()
-{
+    setMines();
     ui->p1_1->setText("=");
     ui->p1_2->setText("=");
     ui->p1_3->setText("=");
@@ -102,6 +81,41 @@ void Minesweeper::ResetText()
     ui->p5_8->setText("=");
     ui->p5_9->setText("=");
     ui->p5_10->setText("=");
+}
+
+void Minesweeper::setMines()
+{
+    int counter = 0, temp_number, temp_number_x, temp_number_y;
+    srand(time(NULL));
+    while(counter < 10)
+    {
+        temp_number = rand() % 50;
+        temp_number_x = temp_number % 10;
+        temp_number_y = temp_number / 10;
+        if(mines[temp_number_x][temp_number_y] == 0)
+        {
+            mines[temp_number_x][temp_number_y] = 1;
+            counter++;
+        }
+    }
+}
+
+void Minesweeper::firstStepSetMines(int first_y, int first_x)
+{
+    int counter = 0, temp_number, temp_number_x, temp_number_y;
+    srand(time(NULL));
+    while(counter < 10)
+    {
+        temp_number = rand() % 50;
+        temp_number_x = temp_number % 10;
+        temp_number_y = temp_number / 10;
+        if(first_x == temp_number_x && first_y == temp_number_y){}
+        else if(mines[temp_number_x][temp_number_y] == 0)
+        {
+            mines[temp_number_x][temp_number_y] = 1;
+            counter++;
+        }
+    }
 }
 
 bool Minesweeper::checkMine(int y_spot, int x_spot)
@@ -277,7 +291,14 @@ void Minesweeper::on_pushButton_clicked()
 
 void Minesweeper::on_p1_1_clicked()
 {
-    if(checkMine(0, 0))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 0);
+        ui->p1_1->setText(QString::number(checkSurrounding(0, 0)));
+    }
+    else if(checkMine(0, 0))
     {
         gameOver();
     }
@@ -292,7 +313,14 @@ void Minesweeper::on_p1_1_clicked()
 
 void Minesweeper::on_p1_2_clicked()
 {
-    if(checkMine(0, 1))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 1);
+        ui->p1_2->setText(QString::number(checkSurrounding(0, 1)));
+    }
+    else if(checkMine(0, 1))
     {
         gameOver();
     }
@@ -307,7 +335,14 @@ void Minesweeper::on_p1_2_clicked()
 
 void Minesweeper::on_p1_3_clicked()
 {
-    if(checkMine(0, 2))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 2);
+        ui->p1_3->setText(QString::number(checkSurrounding(0, 2)));
+    }
+    else if(checkMine(0, 2))
     {
         gameOver();
     }
@@ -322,7 +357,14 @@ void Minesweeper::on_p1_3_clicked()
 
 void Minesweeper::on_p1_4_clicked()
 {
-    if(checkMine(0, 3))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 3);
+        ui->p1_4->setText(QString::number(checkSurrounding(0, 3)));
+    }
+    else if(checkMine(0, 3))
     {
         gameOver();
     }
@@ -337,7 +379,14 @@ void Minesweeper::on_p1_4_clicked()
 
 void Minesweeper::on_p1_5_clicked()
 {
-    if(checkMine(0, 4))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 4);
+        ui->p1_5->setText(QString::number(checkSurrounding(0, 4)));
+    }
+    else if(checkMine(0, 4))
     {
         gameOver();
     }
@@ -352,7 +401,14 @@ void Minesweeper::on_p1_5_clicked()
 
 void Minesweeper::on_p1_6_clicked()
 {
-    if(checkMine(0, 5))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 5);
+        ui->p1_6->setText(QString::number(checkSurrounding(0, 5)));
+    }
+    else if(checkMine(0, 5))
     {
         gameOver();
     }
@@ -367,7 +423,14 @@ void Minesweeper::on_p1_6_clicked()
 
 void Minesweeper::on_p1_7_clicked()
 {
-    if(checkMine(0, 6))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 6);
+        ui->p1_7->setText(QString::number(checkSurrounding(0, 6)));
+    }
+    else if(checkMine(0, 6))
     {
         gameOver();
     }
@@ -382,7 +445,14 @@ void Minesweeper::on_p1_7_clicked()
 
 void Minesweeper::on_p1_8_clicked()
 {
-    if(checkMine(0, 7))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 7);
+        ui->p1_8->setText(QString::number(checkSurrounding(0, 7)));
+    }
+    else if(checkMine(0, 7))
     {
         gameOver();
     }
@@ -397,7 +467,14 @@ void Minesweeper::on_p1_8_clicked()
 
 void Minesweeper::on_p1_9_clicked()
 {
-    if(checkMine(0, 8))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 8);
+        ui->p1_9->setText(QString::number(checkSurrounding(0, 8)));
+    }
+    else if(checkMine(0, 8))
     {
         gameOver();
     }
@@ -412,7 +489,14 @@ void Minesweeper::on_p1_9_clicked()
 
 void Minesweeper::on_p1_10_clicked()
 {
-    if(checkMine(0, 9))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(0, 9);
+        ui->p1_10->setText(QString::number(checkSurrounding(0, 9)));
+    }
+    else if(checkMine(0, 9))
     {
         gameOver();
     }
@@ -427,7 +511,14 @@ void Minesweeper::on_p1_10_clicked()
 
 void Minesweeper::on_p2_1_clicked()
 {
-    if(checkMine(1, 0))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 0);
+        ui->p2_1->setText(QString::number(checkSurrounding(1, 0)));
+    }
+    else if(checkMine(1, 0))
     {
         gameOver();
     }
@@ -442,7 +533,14 @@ void Minesweeper::on_p2_1_clicked()
 
 void Minesweeper::on_p2_2_clicked()
 {
-    if(checkMine(1, 1))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 1);
+        ui->p2_2->setText(QString::number(checkSurrounding(1, 1)));
+    }
+    else if(checkMine(1, 1))
     {
         gameOver();
     }
@@ -457,7 +555,14 @@ void Minesweeper::on_p2_2_clicked()
 
 void Minesweeper::on_p2_3_clicked()
 {
-    if(checkMine(1, 2))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 2);
+        ui->p2_3->setText(QString::number(checkSurrounding(1, 2)));
+    }
+    else if(checkMine(1, 2))
     {
         gameOver();
     }
@@ -472,7 +577,14 @@ void Minesweeper::on_p2_3_clicked()
 
 void Minesweeper::on_p2_4_clicked()
 {
-    if(checkMine(1, 3))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 3);
+        ui->p2_4->setText(QString::number(checkSurrounding(1, 3)));
+    }
+    else if(checkMine(1, 3))
     {
         gameOver();
     }
@@ -487,7 +599,14 @@ void Minesweeper::on_p2_4_clicked()
 
 void Minesweeper::on_p2_5_clicked()
 {
-    if(checkMine(1, 4))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 4);
+        ui->p2_5->setText(QString::number(checkSurrounding(1, 4)));
+    }
+    else if(checkMine(1, 4))
     {
         gameOver();
     }
@@ -502,7 +621,14 @@ void Minesweeper::on_p2_5_clicked()
 
 void Minesweeper::on_p2_6_clicked()
 {
-    if(checkMine(1, 5))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 5);
+        ui->p2_6->setText(QString::number(checkSurrounding(1, 5)));
+    }
+    else if(checkMine(1, 5))
     {
         gameOver();
     }
@@ -517,7 +643,14 @@ void Minesweeper::on_p2_6_clicked()
 
 void Minesweeper::on_p2_7_clicked()
 {
-    if(checkMine(1, 6))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 6);
+        ui->p2_7->setText(QString::number(checkSurrounding(1, 6)));
+    }
+    else if(checkMine(1, 6))
     {
         gameOver();
     }
@@ -532,7 +665,14 @@ void Minesweeper::on_p2_7_clicked()
 
 void Minesweeper::on_p2_8_clicked()
 {
-    if(checkMine(1, 7))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 7);
+        ui->p2_8->setText(QString::number(checkSurrounding(1, 7)));
+    }
+    else if(checkMine(1, 7))
     {
         gameOver();
     }
@@ -547,7 +687,14 @@ void Minesweeper::on_p2_8_clicked()
 
 void Minesweeper::on_p2_9_clicked()
 {
-    if(checkMine(1, 8))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 8);
+        ui->p2_9->setText(QString::number(checkSurrounding(1, 8)));
+    }
+    else if(checkMine(1, 8))
     {
         gameOver();
     }
@@ -562,7 +709,14 @@ void Minesweeper::on_p2_9_clicked()
 
 void Minesweeper::on_p2_10_clicked()
 {
-    if(checkMine(1, 9))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(1, 9);
+        ui->p2_10->setText(QString::number(checkSurrounding(1, 9)));
+    }
+    else if(checkMine(1, 9))
     {
         gameOver();
     }
@@ -577,7 +731,14 @@ void Minesweeper::on_p2_10_clicked()
 
 void Minesweeper::on_p3_1_clicked()
 {
-    if(checkMine(2, 0))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 0);
+        ui->p3_1->setText(QString::number(checkSurrounding(2, 0)));
+    }
+    else if(checkMine(2, 0))
     {
         gameOver();
     }
@@ -592,7 +753,14 @@ void Minesweeper::on_p3_1_clicked()
 
 void Minesweeper::on_p3_2_clicked()
 {
-    if(checkMine(2, 1))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 1);
+        ui->p3_2->setText(QString::number(checkSurrounding(2, 1)));
+    }
+    else if(checkMine(2, 1))
     {
         gameOver();
     }
@@ -607,7 +775,14 @@ void Minesweeper::on_p3_2_clicked()
 
 void Minesweeper::on_p3_3_clicked()
 {
-    if(checkMine(2, 2))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 2);
+        ui->p3_3->setText(QString::number(checkSurrounding(2, 2)));
+    }
+    else if(checkMine(2, 2))
     {
         gameOver();
     }
@@ -622,7 +797,14 @@ void Minesweeper::on_p3_3_clicked()
 
 void Minesweeper::on_p3_4_clicked()
 {
-    if(checkMine(2, 3))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 3);
+        ui->p3_4->setText(QString::number(checkSurrounding(2, 3)));
+    }
+    else if(checkMine(2, 3))
     {
         gameOver();
     }
@@ -637,7 +819,14 @@ void Minesweeper::on_p3_4_clicked()
 
 void Minesweeper::on_p3_5_clicked()
 {
-    if(checkMine(2, 4))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 4);
+        ui->p3_5->setText(QString::number(checkSurrounding(2, 4)));
+    }
+    else if(checkMine(2, 4))
     {
         gameOver();
     }
@@ -652,7 +841,14 @@ void Minesweeper::on_p3_5_clicked()
 
 void Minesweeper::on_p3_6_clicked()
 {
-    if(checkMine(2, 5))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 5);
+        ui->p3_6->setText(QString::number(checkSurrounding(2, 5)));
+    }
+    else if(checkMine(2, 5))
     {
         gameOver();
     }
@@ -667,7 +863,14 @@ void Minesweeper::on_p3_6_clicked()
 
 void Minesweeper::on_p3_7_clicked()
 {
-    if(checkMine(2, 6))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 6);
+        ui->p3_7->setText(QString::number(checkSurrounding(2, 6)));
+    }
+    else if(checkMine(2, 6))
     {
         gameOver();
     }
@@ -682,7 +885,14 @@ void Minesweeper::on_p3_7_clicked()
 
 void Minesweeper::on_p3_8_clicked()
 {
-    if(checkMine(2, 7))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 7);
+        ui->p3_8->setText(QString::number(checkSurrounding(2, 7)));
+    }
+    else if(checkMine(2, 7))
     {
         gameOver();
     }
@@ -697,7 +907,14 @@ void Minesweeper::on_p3_8_clicked()
 
 void Minesweeper::on_p3_9_clicked()
 {
-    if(checkMine(2, 8))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 8);
+        ui->p3_9->setText(QString::number(checkSurrounding(2, 8)));
+    }
+    else if(checkMine(2, 8))
     {
         gameOver();
     }
@@ -712,7 +929,14 @@ void Minesweeper::on_p3_9_clicked()
 
 void Minesweeper::on_p3_10_clicked()
 {
-    if(checkMine(2, 9))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(2, 9);
+        ui->p3_10->setText(QString::number(checkSurrounding(2, 9)));
+    }
+    else if(checkMine(2, 9))
     {
         gameOver();
     }
@@ -727,7 +951,14 @@ void Minesweeper::on_p3_10_clicked()
 
 void Minesweeper::on_p4_1_clicked()
 {
-    if(checkMine(3, 0))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 0);
+        ui->p4_1->setText(QString::number(checkSurrounding(3, 0)));
+    }
+    else if(checkMine(3, 0))
     {
         gameOver();
     }
@@ -742,7 +973,14 @@ void Minesweeper::on_p4_1_clicked()
 
 void Minesweeper::on_p4_2_clicked()
 {
-    if(checkMine(3, 1))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 1);
+        ui->p4_2->setText(QString::number(checkSurrounding(3, 1)));
+    }
+    else if(checkMine(3, 1))
     {
         gameOver();
     }
@@ -757,7 +995,14 @@ void Minesweeper::on_p4_2_clicked()
 
 void Minesweeper::on_p4_3_clicked()
 {
-    if(checkMine(3, 2))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 2);
+        ui->p4_3->setText(QString::number(checkSurrounding(3, 2)));
+    }
+    else if(checkMine(3, 2))
     {
         gameOver();
     }
@@ -772,7 +1017,14 @@ void Minesweeper::on_p4_3_clicked()
 
 void Minesweeper::on_p4_4_clicked()
 {
-    if(checkMine(3, 3))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 3);
+        ui->p4_4->setText(QString::number(checkSurrounding(3, 3)));
+    }
+    else if(checkMine(3, 3))
     {
         gameOver();
     }
@@ -787,7 +1039,14 @@ void Minesweeper::on_p4_4_clicked()
 
 void Minesweeper::on_p4_5_clicked()
 {
-    if(checkMine(3, 4))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 4);
+        ui->p4_5->setText(QString::number(checkSurrounding(3, 4)));
+    }
+    else if(checkMine(3, 4))
     {
         gameOver();
     }
@@ -802,7 +1061,14 @@ void Minesweeper::on_p4_5_clicked()
 
 void Minesweeper::on_p4_6_clicked()
 {
-    if(checkMine(3, 5))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 5);
+        ui->p4_6->setText(QString::number(checkSurrounding(3, 5)));
+    }
+    else if(checkMine(3, 5))
     {
         gameOver();
     }
@@ -817,7 +1083,14 @@ void Minesweeper::on_p4_6_clicked()
 
 void Minesweeper::on_p4_7_clicked()
 {
-    if(checkMine(3, 6))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 6);
+        ui->p4_7->setText(QString::number(checkSurrounding(3, 6)));
+    }
+    else if(checkMine(3, 6))
     {
         gameOver();
     }
@@ -832,7 +1105,14 @@ void Minesweeper::on_p4_7_clicked()
 
 void Minesweeper::on_p4_8_clicked()
 {
-    if(checkMine(3, 7))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 7);
+        ui->p4_8->setText(QString::number(checkSurrounding(3, 7)));
+    }
+    else if(checkMine(3, 7))
     {
         gameOver();
     }
@@ -847,7 +1127,14 @@ void Minesweeper::on_p4_8_clicked()
 
 void Minesweeper::on_p4_9_clicked()
 {
-    if(checkMine(3, 8))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 8);
+        ui->p4_9->setText(QString::number(checkSurrounding(3, 8)));
+    }
+    else if(checkMine(3, 8))
     {
         gameOver();
     }
@@ -862,7 +1149,14 @@ void Minesweeper::on_p4_9_clicked()
 
 void Minesweeper::on_p4_10_clicked()
 {
-    if(checkMine(3, 9))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(3, 9);
+        ui->p4_10->setText(QString::number(checkSurrounding(3, 9)));
+    }
+    else if(checkMine(3, 9))
     {
         gameOver();
     }
@@ -877,7 +1171,14 @@ void Minesweeper::on_p4_10_clicked()
 
 void Minesweeper::on_p5_1_clicked()
 {
-    if(checkMine(4, 0))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 0);
+        ui->p5_1->setText(QString::number(checkSurrounding(4, 0)));
+    }
+    else if(checkMine(4, 0))
     {
         gameOver();
     }
@@ -892,7 +1193,14 @@ void Minesweeper::on_p5_1_clicked()
 
 void Minesweeper::on_p5_2_clicked()
 {
-    if(checkMine(4, 1))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 1);
+        ui->p5_2->setText(QString::number(checkSurrounding(4, 1)));
+    }
+    else if(checkMine(4, 1))
     {
         gameOver();
     }
@@ -907,7 +1215,14 @@ void Minesweeper::on_p5_2_clicked()
 
 void Minesweeper::on_p5_3_clicked()
 {
-    if(checkMine(4, 2))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 2);
+        ui->p5_3->setText(QString::number(checkSurrounding(4, 2)));
+    }
+    else if(checkMine(4, 2))
     {
         gameOver();
     }
@@ -922,7 +1237,14 @@ void Minesweeper::on_p5_3_clicked()
 
 void Minesweeper::on_p5_4_clicked()
 {
-    if(checkMine(4, 3))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 3);
+        ui->p5_4->setText(QString::number(checkSurrounding(4, 3)));
+    }
+    else if(checkMine(4, 3))
     {
         gameOver();
     }
@@ -937,7 +1259,14 @@ void Minesweeper::on_p5_4_clicked()
 
 void Minesweeper::on_p5_5_clicked()
 {
-    if(checkMine(4, 4))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 4);
+        ui->p5_5->setText(QString::number(checkSurrounding(4, 4)));
+    }
+    else if(checkMine(4, 4))
     {
         gameOver();
     }
@@ -952,7 +1281,14 @@ void Minesweeper::on_p5_5_clicked()
 
 void Minesweeper::on_p5_6_clicked()
 {
-    if(checkMine(4, 5))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 5);
+        ui->p5_6->setText(QString::number(checkSurrounding(4, 5)));
+    }
+    else if(checkMine(4, 5))
     {
         gameOver();
     }
@@ -967,7 +1303,14 @@ void Minesweeper::on_p5_6_clicked()
 
 void Minesweeper::on_p5_7_clicked()
 {
-    if(checkMine(4, 6))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 6);
+        ui->p5_7->setText(QString::number(checkSurrounding(4, 6)));
+    }
+    else if(checkMine(4, 6))
     {
         gameOver();
     }
@@ -982,7 +1325,14 @@ void Minesweeper::on_p5_7_clicked()
 
 void Minesweeper::on_p5_8_clicked()
 {
-    if(checkMine(4, 7))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 7);
+        ui->p5_8->setText(QString::number(checkSurrounding(4, 7)));
+    }
+    else if(checkMine(4, 7))
     {
         gameOver();
     }
@@ -997,7 +1347,14 @@ void Minesweeper::on_p5_8_clicked()
 
 void Minesweeper::on_p5_9_clicked()
 {
-    if(checkMine(4, 8))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 8);
+        ui->p5_9->setText(QString::number(checkSurrounding(4, 8)));
+    }
+    else if(checkMine(4, 8))
     {
         gameOver();
     }
@@ -1012,7 +1369,14 @@ void Minesweeper::on_p5_9_clicked()
 
 void Minesweeper::on_p5_10_clicked()
 {
-    if(checkMine(4, 9))
+    if(firstStep == 0)
+    {
+        firstStep = 1;
+        successCounter = 1;
+        firstStepSetMines(4, 9);
+        ui->p5_10->setText(QString::number(checkSurrounding(4, 9)));
+    }
+    else if(checkMine(4, 9))
     {
         gameOver();
     }

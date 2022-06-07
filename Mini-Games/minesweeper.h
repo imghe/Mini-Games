@@ -14,11 +14,12 @@ class Minesweeper : public QWidget
 public:
     explicit Minesweeper(QWidget *parent = nullptr);
     ~Minesweeper();
+    bool firstStep;
     int successCounter;
-    void clearMines();
+    void resetGame();
     void setMines();
+    void firstStepSetMines(int, int);
     void minesReset();
-    void ResetText();
     bool checkMine(int, int);
     int checkSurrounding(int, int);
     void checkWinning();

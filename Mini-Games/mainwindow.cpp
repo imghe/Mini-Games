@@ -81,7 +81,7 @@ void MainWindow::on_Booom_clicked()
 
 void MainWindow::on_mineSweeper_clicked()
 {
-    Minesweeper.setMines();
+    Minesweeper.resetGame();
     Minesweeper.show();
 }
 
