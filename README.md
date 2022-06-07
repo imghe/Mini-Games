@@ -1,4 +1,5 @@
 項目名稱：Mini-Games
+組別：第14組
 ##
 成員 ：
 
@@ -13,7 +14,7 @@ B0222891 余俊昌
 ##
 製作成可放入遊戲的遊戲庫，放入三款由三人個別製作的遊戲。
 
-主要使用QT Creator建立，並輔助使用Visual Studio。
+主要使用QT Creator建立，並使用Visual Studio輔助。
 ##
 UML類圖
 
