@@ -83,157 +83,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="SecKey">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>70</y>
-       <width>181</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>設定拆除時限(S)</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="BoomSecKey">
-     <property name="geometry">
-      <rect>
-       <x>710</x>
-       <y>70</y>
-       <width>261</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_1">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>170</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>玩家</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_2</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_2">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>170</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>幸運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_2</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_3">
-     <property name="geometry">
-      <rect>
-       <x>750</x>
-       <y>170</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>普通電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_2</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_4">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>170</y>
-       <width>111</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>厄運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_2</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_5">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>260</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>玩家</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_1</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_6">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>260</y>
-       <width>111</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>幸運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_1</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_7">
-     <property name="geometry">
-      <rect>
-       <x>750</x>
-       <y>260</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>普通電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_1</string>
-     </attribute>
-    </widget>
     <widget class="QLineEdit" name="playerName_2">
      <property name="geometry">
       <rect>
@@ -252,150 +101,6 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_8">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>260</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>厄運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_1</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_9">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>350</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>玩家</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_3</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_10">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>350</y>
-       <width>111</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>幸運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_3</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_11">
-     <property name="geometry">
-      <rect>
-       <x>750</x>
-       <y>350</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>普通電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_3</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_12">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>350</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>厄運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_3</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_13">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>440</y>
-       <width>111</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>玩家</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_4</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_14">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>440</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>幸運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_4</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_15">
-     <property name="geometry">
-      <rect>
-       <x>750</x>
-       <y>440</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>普通電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_4</string>
-     </attribute>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_16">
-     <property name="geometry">
-      <rect>
-       <x>860</x>
-       <y>440</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>厄運電腦</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup_4</string>
-     </attribute>
     </widget>
     <widget class="QLineEdit" name="playerName_4">
      <property name="geometry">
@@ -556,13 +261,177 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QSlider" name="mod_1">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>186</y>
+       <width>391</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSlider" name="mod_2">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>275</y>
+       <width>391</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSlider" name="mod_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>365</y>
+       <width>391</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSlider" name="mod_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>455</y>
+       <width>391</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>119</y>
+       <width>63</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>細明體_HKSCS</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>玩家</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>120</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>細明體_HKSCS</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>幸運電腦</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>120</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>細明體_HKSCS</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>普通電腦</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>870</x>
+       <y>120</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>細明體_HKSCS</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>厄運電腦</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="Booom_go">
     <widget class="QLabel" name="Boom">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>30</y>
+       <x>130</x>
+       <y>20</y>
        <width>261</width>
        <height>201</height>
       </rect>
@@ -586,10 +455,10 @@
     <widget class="QProgressBar" name="BoomBar">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>240</y>
-       <width>261</width>
-       <height>23</height>
+       <x>420</x>
+       <y>190</y>
+       <width>441</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -599,49 +468,25 @@
       <number>24</number>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="BoomSec">
-     <property name="geometry">
-      <rect>
-       <x>560</x>
-       <y>160</y>
-       <width>71</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 0, 0);
-background-color: rgb(48, 48, 48);
-font: 700 9pt &quot;Terminal&quot;;</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="KeySet">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>580</y>
-       <width>101</width>
-       <height>41</height>
+       <x>720</x>
+       <y>560</y>
+       <width>141</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
       <string>拆解</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label_1">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>270</y>
-       <width>261</width>
+       <x>420</x>
+       <y>60</y>
+       <width>441</width>
        <height>51</height>
       </rect>
      </property>
@@ -660,9 +505,9 @@ font: 700 9pt &quot;Terminal&quot;;</string>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>430</y>
-       <width>261</width>
+       <x>420</x>
+       <y>350</y>
+       <width>441</width>
        <height>51</height>
       </rect>
      </property>
@@ -681,9 +526,9 @@ font: 700 9pt &quot;Terminal&quot;;</string>
     <widget class="QLineEdit" name="BoomKeySize">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>340</y>
-       <width>521</width>
+       <x>420</x>
+       <y>130</y>
+       <width>441</width>
        <height>51</height>
       </rect>
      </property>
@@ -702,9 +547,9 @@ font: 700 9pt &quot;Terminal&quot;;</string>
     <widget class="QLineEdit" name="BoomKey">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>500</y>
-       <width>521</width>
+       <x>420</x>
+       <y>420</y>
+       <width>441</width>
        <height>51</height>
       </rect>
      </property>
@@ -720,15 +565,88 @@ font: 700 9pt &quot;Terminal&quot;;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QSlider" name="mod_s">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>380</y>
+       <width>31</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Player_1">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>350</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Player_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>420</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Player_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Player_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>560</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CPUKey">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>560</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>電腦拆解</string>
+     </property>
+    </widget>
+    <zorder>Player_4</zorder>
+    <zorder>BoomKeySize</zorder>
+    <zorder>Boom</zorder>
+    <zorder>BoomBar</zorder>
+    <zorder>KeySet</zorder>
+    <zorder>label_1</zorder>
+    <zorder>label_3</zorder>
+    <zorder>BoomKey</zorder>
+    <zorder>mod_s</zorder>
+    <zorder>Player_1</zorder>
+    <zorder>Player_2</zorder>
+    <zorder>Player_3</zorder>
+    <zorder>CPUKey</zorder>
    </widget>
   </widget>
  </widget>
  <resources/>
  <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_1"/>
-  <buttongroup name="buttonGroup_3"/>
- </buttongroups>
 </ui>
