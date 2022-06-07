@@ -25,7 +25,7 @@ UML類圖
 	-    pageMAX : static int;
 	-    pokerThanSize : pokerThanSize;
 	-    Booom : Booom;
-	-    Minesweeper Minesweeper;
+	-    Minesweeper : Minesweeper;
 	----------------------------------------------------------------------------------------------------------------
 	+    MainWindow(QWidget *parent = nullptr);
 	+    ~MainWindow();
