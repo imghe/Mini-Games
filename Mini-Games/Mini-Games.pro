@@ -12,18 +12,21 @@ SOURCES += \
     booom.cpp \
     main.cpp \
     mainwindow.cpp \
+    minesweeper.cpp \
     poker.cpp \
     pokerthansize.cpp
 
 HEADERS += \
     booom.h \
     mainwindow.h \
+    minesweeper.h \
     poker.h \
     pokerthansize.h
 
 FORMS += \
     booom.ui \
     mainwindow.ui \
+    minesweeper.ui \
     pokerthansize.ui
 
 # Default rules for deployment.
