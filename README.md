@@ -24,19 +24,21 @@ UML類圖
 	-    pageMAX : static int;
 	-    pokerThanSize : pokerThanSize;
 	-    Booom : Booom;
+	-    Minesweeper Minesweeper;
 	----------------------------------------------------------------------------------------------------------------
 	+    MainWindow(QWidget *parent = nullptr);
 	+    ~MainWindow();
 
-	-    on_pokerThanSize_clicked();
-	-    on_Booom_clicked();
-	-    setPage(int);
-	-    on_stop_clicked();
-	-    on_DOWN_clicked();
-	-    on_UP_clicked();
-	-    on_play_clicked();
-	-    on_back_clicked();
-	-    on_pageComboBox_currentIndexChanged(int index);
+	-    on_pokerThanSize_clicked() : void;
+	-    on_Booom_clicked() : void;
+	-    on_mineSweeper_clicked() : void;
+	-    setPage(int) : void;
+	-    on_stop_clicked() : void;
+	-    on_DOWN_clicked() : void;
+	-    on_UP_clicked() : void;
+	-    on_play_clicked() : void;
+	-    on_back_clicked() : void;
+	-    on_pageComboBox_currentIndexChanged(int index) : void;
 	----------------------------------------------------------------------------------------------------------------
 	// 選單視窗
 
@@ -76,22 +78,34 @@ UML類圖
 	----------------------------------------------------------------------------------------------------------------
 	-    ui : Ui::Booom*;
 
-	-    BoomSize : static int;
-	-    BoomMax : static int;
-	-    BoomMin : static int;
-	-    BoomSec : static int;
-	-    BoomEnd : static int;
+	-    BoomSize : int;
+	-    BoomMax : int;
+	-    BoomMin : int;
+	-    BoomEnd : int;
+	-    play : int;
+	-    playerType[4] : int;
+	-    playName[4] : QString;
 	----------------------------------------------------------------------------------------------------------------
 	+    Booom(QWidget *parent = nullptr) : explicit;
 	+    ~Booom();
-	+    BoomReset();
+	+    BoomReset() : void;
+	+    GO(int) : void;
 
-	-    on_BoomGOGO_clicked();
-	-    on_KeySet_clicked();
-
-	-    setBoomKeySize();
-	-    Boooom();
-	-    KeyIn(int);
+	-    on_BoomGOGO_clicked() : void;
+	-    on_KeySet_clicked() : void;
+	-    on_BoomKey_returnPressed() : void;
+	-    on_BoomSizeKey_returnPressed() : void;
+	-    on_BoomGOEND_clicked() : void;
+	-    on_mod_1_valueChanged(int value) : void;
+	-    on_mod_2_valueChanged(int value) : void;
+	-    on_mod_3_valueChanged(int value) : void;
+	-    on_mod_4_valueChanged(int value) : void;
+	-    on_mod_s_valueChanged(int value) : void;
+	-    on_CPUKey_clicked() : void;
+	-    setBoomKeySize() : void;
+	-    Boooom() : void;
+	-    WIN() : win;
+	-    nameSet(int, int) : void;
 	----------------------------------------------------------------------------------------------------------------
 	// 拆解炸彈
 	
