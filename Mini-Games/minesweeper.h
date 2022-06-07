@@ -25,6 +25,7 @@ public:
     void checkWinning();
     void win();
     void gameOver();
+    void showMines();
 
 private slots:
     void on_pushButton_clicked();
@@ -128,6 +129,8 @@ private slots:
     void on_p5_9_clicked();
 
     void on_p5_10_clicked();
+
+    void on_showMinesButton_clicked();
 
 private:
     bool mines[5][10];

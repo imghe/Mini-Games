@@ -666,9 +666,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>570</y>
-     <width>221</width>
+     <x>330</x>
+     <y>30</y>
+     <width>341</width>
      <height>71</height>
     </rect>
    </property>
@@ -676,14 +676,17 @@
     <string>重新設置地雷</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QPushButton" name="showMinesButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>20</y>
-     <width>381</width>
-     <height>81</height>
+     <x>370</x>
+     <y>570</y>
+     <width>261</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>顯示地雷</string>
    </property>
   </widget>
  </widget>
