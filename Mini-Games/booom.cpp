@@ -75,14 +75,13 @@ void Booom::BoomReset(){
 }
 
 void Booom::Boooom(){
-    QString out=playName[play];
-    out+=" failed to defuse the bomb";
+    QString out=" Failed to defuse the bomb, game over.";
     QMessageBox:: critical ( this , tr ( "Boooom" ), out);
     BoomReset();
 }
 
 void Booom::WIN(){
-    QString out=" The bomb was dismantled successfully, all players win";
+    QString out=" The bomb was dismantled successfully, all players win.";
     QMessageBox:: about ( this , tr ( "Boooom" ), out);
     BoomReset();
 }
@@ -159,9 +158,9 @@ void Booom::on_BoomGOGO_clicked()
 }
 void Booom::GO(int NewKey){
 
-    if(BoomMax-BoomMin<3)
-        WIN();
-    else if(BoomMin<NewKey&&NewKey<BoomMax)
+
+
+    if(BoomMin<NewKey&&NewKey<BoomMax)
     {
         if(BoomEnd==NewKey)
             Boooom();
@@ -173,6 +172,8 @@ void Booom::GO(int NewKey){
                 BoomMin=NewKey;
 
             setBoomKeySize();
+
+            if(BoomMax-BoomMin<4)WIN();
 
             play=++play%4;
             ui->mod_s->setValue(3-play);
@@ -246,8 +247,6 @@ void Booom::on_mod_4_valueChanged(int value)
 void Booom::on_mod_s_valueChanged(int value)
 {
     ui->mod_s->setValue(3-play);
-    if(playerType[play]!=1)ui->BoomKey->setFocusPolicy(Qt::NoFocus);
-    else ui->BoomKey->setFocusPolicy(Qt::StrongFocus);
 }
 
 
